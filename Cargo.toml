@@ -3,5 +3,6 @@ name = "passing-arg-iter"
 version = "0.1.0"
 authors = ["Avi ד"]
 edition = "2018"
-
+description = "Add an argument to argument to Iterator::Item without losing Sized"
+license = "MIT/Apache-2.0"
 [dependencies]
