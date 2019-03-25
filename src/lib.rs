@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub struct PassingArgument<I, T> {
     iter: I,
     argument: T,
