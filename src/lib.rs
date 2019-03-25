@@ -35,6 +35,10 @@ where
         }
     }
 
+    fn nth(&mut self, n: usize) -> Option<Self::Item> {
+        self.iter.nth(n).map(|nth| (self.argument.clone(), nth))
+    }
+
     fn size_hint(&self) -> (usize, Option<usize>) {
         self.iter.size_hint()
     }
