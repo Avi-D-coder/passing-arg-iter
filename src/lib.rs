@@ -34,6 +34,10 @@ where
             None => None,
         }
     }
+
+    fn size_hint(&self) -> (usize, Option<usize>) {
+        self.iter.size_hint()
+    }
 }
 
 impl<I, T> DoubleEndedIterator for PassingArgument<I, T>
@@ -43,5 +47,15 @@ where
 {
     fn next_back(&mut self) -> Option<Self::Item> {
         self.iter.next_back().map(|nb| (self.argument.clone(), nb))
+    }
+}
+
+impl<I, T> ExactSizeIterator for PassingArgument<I, T>
+where
+    I: ExactSizeIterator,
+    T: Clone,
+{
+    fn len(&self) -> usize {
+        self.iter.len()
     }
 }
