@@ -1,6 +1,6 @@
 [package]
 name = "passing-arg-iter"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["Avi ד"]
 edition = "2018"
 description = "Add an argument to argument to Iterator::Item without losing Sized"
