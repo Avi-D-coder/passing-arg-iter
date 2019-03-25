@@ -35,3 +35,13 @@ where
         }
     }
 }
+
+impl<I, T> DoubleEndedIterator for PassingArgument<I, T>
+where
+    I: DoubleEndedIterator,
+    T: Clone,
+{
+    fn next_back(&mut self) -> Option<Self::Item> {
+        self.iter.next_back().map(|nb| (self.argument.clone(), nb))
+    }
+}
